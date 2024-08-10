@@ -1,0 +1,11 @@
+// https://takeuforward.org/plus/data-structures-and-algorithm/beginner-problems/language-basics/print-last-character-of-string
+
+class Solution{
+    public:
+
+    //TC - O(1)
+        char lastChar(string& s){
+            int n = s.size();
+            return s[n-1];
+        }
+};
