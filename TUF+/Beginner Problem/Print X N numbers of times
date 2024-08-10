@@ -1,0 +1,13 @@
+// https://takeuforward.org/plus/data-structures-and-algorithm/beginner-problems/language-basics/print-x-n-numbers-of-times
+
+class Solution {
+public:
+
+//TC - O(n)
+    void printX(int X, int N) {
+        for(int i = 1; i <= N; i++){
+            cout << X << " ";
+        }
+        cout << endl;
+    }
+};
