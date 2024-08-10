@@ -1,0 +1,12 @@
+// https://takeuforward.org/plus/data-structures-and-algorithm/beginner-problems/language-basics/input-output 
+
+class Solution {
+public:
+
+//TC - O(1)
+    void printNumber() {
+        int a;
+        cin >> a;
+        cout << a << endl;
+    }
+};
