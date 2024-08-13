@@ -1,0 +1,20 @@
+// https://takeuforward.org/plus/data-structures-and-algorithm/beginner-problems/basic-maths/check-for-perfect-number/editorial
+
+class Solution {
+public:
+
+//Time Complexity: O(N) – Running a loop from 1 to N.
+//Space Complexity: O(1) – Using a couple of variables i.e., constant space, regardless of the size of input.
+    bool isPerfect(int n) {
+        int sum = 0;
+        for(int i = 1; i < n; i++){
+            if(n % i == 0){
+                sum += i;
+            }
+        }
+        if(sum == n){
+            return true;
+        }
+        return false;
+    }
+};
