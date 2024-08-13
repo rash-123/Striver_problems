@@ -1,0 +1,20 @@
+// https://takeuforward.org/plus/data-structures-and-algorithm/beginner-problems/basic-maths/count-all-digits-of-a-number
+
+class Solution {
+public:
+
+//Time Complexity: O(log10(N)) – In every iteration we are dividing N by 10.
+//Space Complexity: O(1) – Using a couple of variables i.e., constant space.
+    int countDigit(int n) {
+        int count = 0;
+        if(n == 0){
+            return 1;
+        }
+        while(n>0){
+            int lastDigit = n%10;
+            count++;
+            n=n/10;
+        }
+        return count;
+    }
+};
