@@ -1,0 +1,22 @@
+// https://takeuforward.org/plus/data-structures-and-algorithm/beginner-problems/basic-maths/return-the-largest-digit-in-a-number
+
+class Solution {
+public:
+
+//Time Complexity: O(log10(N)) – In every iteration, N is divided by 10 (equivalent to the number of digits in N.)
+///Space Complexity: O(1) – Using a couple of variables i.e., constant space.
+    int largestDigit(int n) {
+        int max = 0;
+        if(n == 0){
+            return 0;
+        }
+        while(n > 0){
+            int lastDigit = n % 10;
+            if(lastDigit > max){
+                max = lastDigit;
+            }
+            n = n / 10;
+        }
+        return max;
+    }
+};
