@@ -1,0 +1,18 @@
+// https://takeuforward.org/plus/data-structures-and-algorithm/beginner-problems/basic-maths/factorial-of-a-given-number
+
+class Solution {
+public:
+
+//Time Complexity: O(N) – Iterating once from 1 to N.
+//Space Complexity: O(1) – Using a couple of variables i.e., constant space.
+    int factorial(int n) {
+        if(n == 0 || n == 1){
+            return 1;
+        }
+        int fact = 1;
+        for(int i = 1; i <= n; i++){
+            fact = fact * i;
+        }
+        return fact;
+    }
+};
