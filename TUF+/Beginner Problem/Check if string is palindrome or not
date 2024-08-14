@@ -1,0 +1,16 @@
+// https://takeuforward.org/plus/data-structures-and-algorithm/beginner-problems/basic-recursion/check-if-string-is-palindrome-or-not-
+
+class Solution{	
+	public:		
+// 	Time Complexity : O(N) – A single pass through the string with recursive calls, where n is the length of the string.
+// Space Complexity: O(N) – Due to the recursion stack that grows with the length of the string.
+		bool palindromeCheck(string& s){
+			int n = s.size();
+			for(int i = 0; i <= n/2; i++){
+				if(s[i] != s[n-1-i]){
+					return false;
+				}
+			}
+			return true;
+		}
+};
