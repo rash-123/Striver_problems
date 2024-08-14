@@ -1,0 +1,18 @@
+// https://takeuforward.org/plus/data-structures-and-algorithm/beginner-problems/basic-recursion/reverse-a-string
+
+class Solution{	
+	public:	
+// 	Time Complexity (TC): O(N) : Each character in the string is processed exactly once, resulting in a linear time complexity relative to the length of the string.
+// Space Complexity (SC): O(N): This is due to the recursion stack used in the process. In the worst case, the depth of the recursion is equal to the length of the string, leading to linear space complexity.	
+		vector<char> reverseString(vector<char>& s){
+			int n = s.size();
+			int start = 0;
+			int end = n-1;
+			while(start < end){
+				swap(s[start], s[end]);
+				start++;
+				end--;
+			}
+			return s;
+		}
+};
