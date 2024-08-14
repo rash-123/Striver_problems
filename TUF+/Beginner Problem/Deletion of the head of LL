@@ -1,0 +1,32 @@
+// https://takeuforward.org/plus/data-structures-and-algorithm/beginner-problems/basic-linked-list/deletion-of-the-head-of-ll
+
+/*
+Definition of singly linked list:
+struct ListNode
+{
+    int val;
+    ListNode *next;
+    ListNode(int data1)
+    {
+        val = data1;
+        next = NULL;
+    }
+    ListNode(int data1, ListNode *next1)
+    {
+        val = data1;
+        next = next1;
+    }
+};
+*/
+
+class Solution {
+public:
+// Time Complexity: O(1) for updating the head of the linked list.
+// Space Complexity: O(1) as no extra space is used.
+    ListNode* deleteHead(ListNode* &head) {
+        ListNode* temp = head;
+        head = head->next;
+        delete temp;
+        return head;
+    }
+};
