@@ -1,0 +1,39 @@
+//https://takeuforward.org/plus/data-structures-and-algorithm/beginner-problems/basic-linked-list/deletion-of-the-tail-of-ll
+
+/*
+Definition of singly linked list:
+struct ListNode
+{
+    int val;
+    ListNode *next;
+    ListNode(int data1)
+    {
+        val = data1;
+        next = NULL;
+    }
+    ListNode(int data1, ListNode *next1)
+    {
+        val = data1;
+        next = next1;
+    }
+};
+*/
+
+class Solution {
+public:
+
+//Time Complexity: O(N) for traversing the linked list and updating the tail.
+//Space Complexity: O(1) as no extra space has been used.
+    ListNode* deleteTail(ListNode* &head) {
+        ListNode* temp = head;
+        if(temp == NULL || temp->next == NULL){
+            return NULL;
+        }
+        while(temp->next->next != NULL){
+            temp = temp->next;
+        }
+        temp->next = NULL;
+        return head;
+
+    }
+};
