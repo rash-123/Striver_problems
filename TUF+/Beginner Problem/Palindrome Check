@@ -1,0 +1,16 @@
+// https://takeuforward.org/plus/data-structures-and-algorithm/beginner-problems/basic-strings/palindrome-check/editorial
+
+class Solution{	
+	public:	
+// 	Time Complexity: O(N), where n is the length of the string.
+// Space Complexity: O(1), as no extra space is required.	
+		bool palindromeCheck(string& s){
+			int n = s.size();
+			for(int i = 0; i <= n/2; i++){
+				if(s[i] != s[n-1-i]){
+					return false;
+				}
+			}
+			return true;
+		}
+};
