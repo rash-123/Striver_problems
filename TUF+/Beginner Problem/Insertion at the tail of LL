@@ -1,0 +1,38 @@
+// https://takeuforward.org/plus/data-structures-and-algorithm/beginner-problems/basic-linked-list/insertion-at-the-tail-of-ll
+
+/*
+Definition of singly linked list:
+struct ListNode
+{
+    int val;
+    ListNode *next;
+    ListNode(int data1)
+    {
+        val = data1;
+        next = NULL;
+    }
+    ListNode(int data1, ListNode *next1)
+    {
+        val = data1;
+        next = next1;
+    }
+};
+*/
+
+class Solution {
+public:
+    ListNode* insertAtTail(ListNode* &head, int X) {
+        //Time Complexity: O(N) for traversing the linked list and inserting the new node after the tail. Here N is the length of the Linked List.
+        //Space Complexity: O(1) as no extra space used.
+        ListNode* newNode = new ListNode(X);
+        if(head == NULL){
+            return newNode;
+        }
+        ListNode* temp = head;
+        while(temp->next != NULL){
+            temp = temp->next;
+        }
+        temp->next = newNode;
+        return head;
+    }
+};
