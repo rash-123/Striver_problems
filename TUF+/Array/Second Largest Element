@@ -1,0 +1,25 @@
+// https://takeuforward.org/plus/data-structures-and-algorithm/arrays/fundamentals/second-largest-element
+
+class Solution {
+public:
+//Time Complexity: O(N * log N) for sorting the array, where N is the length of the array.
+//Space Complexity: O(1) as no additional space is used.
+    int secondLargestElement(vector<int>& nums) {
+       int n = nums.size();
+       int largest = INT_MIN;
+       int secondLargest = -1;
+       for(int i = 0; i < n; i++){
+        if(nums[i] > largest){
+            secondLargest = largest;
+            largest = nums[i];
+        }
+        else if(nums[i] > secondLargest && nums[i] != largest){
+            secondLargest = nums[i];
+        }
+       }
+       if(secondLargest > 0){
+       return secondLargest;
+       }
+       return -1;
+    }
+};
