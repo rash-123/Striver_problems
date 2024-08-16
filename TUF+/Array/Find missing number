@@ -1,0 +1,18 @@
+// https://takeuforward.org/plus/data-structures-and-algorithm/arrays/logic-building/find-missing-number/editorial
+
+class Solution {
+public:
+//Time Complexity - O(N)
+//Space Complexity - O(1)
+    int missingNumber(vector<int>& nums) {
+        int n = nums.size();
+        int sum = 0;
+        for(int i = 1; i <= n; i++){
+            sum += i;
+        }
+        for(int i = 0; i < n; i++){
+            sum = sum - nums[i];
+        }
+        return sum;
+    }
+};
