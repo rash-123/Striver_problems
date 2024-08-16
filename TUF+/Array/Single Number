@@ -1,0 +1,21 @@
+// https://takeuforward.org/plus/data-structures-and-algorithm/arrays/logic-building/single-number/editorial
+
+class Solution {
+public:
+//Time Complexity: O(N) where N is the size of the array, for traversal of the array twice in nested for loops.
+//Space Complexity: O(N) as no extra space is used.
+    int singleNumber(vector<int>& nums) {
+        int n = nums.size();
+        int ans = 0;
+        unordered_map<int,int> freq;
+        for(int i = 0; i < n; i++){
+            freq[nums[i]]++;
+        }
+        for(int i = 0; i < n; i++){
+            if(freq[nums[i]] == 1){
+                ans = nums[i];
+            }
+        }
+        return ans;
+    }
+};
