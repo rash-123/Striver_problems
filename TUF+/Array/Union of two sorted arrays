@@ -1,0 +1,25 @@
+// https://takeuforward.org/plus/data-structures-and-algorithm/arrays/logic-building/union-of-two-sorted-arrays
+
+class Solution {
+public:
+//Time Complexity: O( (M+N)log(M+N) ), at max set can store M+N elements {when there are no common elements and elements in nums1 , nums2 are distntict}. So Inserting M+N th element takes log(M+N) time. Upon approximation across inserting all elements in worst, it would take O((M+N)log(M+N) time.
+//Space Complexity: O(M+N), considering space of Union Array.
+    vector<int> unionArray(vector<int>& nums1, vector<int>& nums2) {
+        int n = nums1.size();
+        int m = nums2.size();
+        vector<int> ans;
+
+        set<int> freq;
+        for(int i = 0; i < n; i++){
+            freq.insert(nums1[i]);
+        }
+        for(int i = 0; i < m; i++){
+            freq.insert(nums2[i]);
+        }
+
+        for(int x: freq){
+            ans.push_back(x);
+        }
+        return ans;
+    }
+};
