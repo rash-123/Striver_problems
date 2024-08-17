@@ -1,0 +1,27 @@
+// https://takeuforward.org/plus/data-structures-and-algorithm/arrays/faqs-medium/sort-an-array-of-0's-1's-and-2's
+
+class Solution {
+public:
+//Time Complexity = O(N)
+//Space Complexity = O(1)
+    void sortZeroOneTwo(vector<int>& nums) {
+        int n = nums.size();
+        int i = 0;
+        int j = 0;
+        int k = n-1;
+        while(i <= k){
+            if(nums[i] == 0){
+                swap(nums[i], nums[j]);
+                i++;
+                j++;
+            }
+            else if(nums[i] == 1){
+                i++;
+            }
+            else if(nums[i] == 2){
+                swap(nums[i], nums[k]);
+                k--;
+            }
+        }
+    }
+};
