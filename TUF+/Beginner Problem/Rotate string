@@ -1,0 +1,15 @@
+// https://takeuforward.org/plus/data-structures-and-algorithm/beginner-problems/basic-strings/rotate-string
+
+class Solution{	
+	public:
+	//Time Complexity - O(N) + O(2N)
+	//Space Complexity - O(N)
+		bool rotateString(string& s,string& goal){
+			string ans = s + s;
+			if(ans.find(goal) != string::npos){
+				return true;
+			}
+			return false;
+			
+		}
+};
