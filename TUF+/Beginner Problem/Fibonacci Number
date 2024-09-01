@@ -1,0 +1,13 @@
+// https://takeuforward.org/plus/data-structures-and-algorithm/beginner-problems/basic-recursion/fibonacci-number/editorial
+
+class Solution {
+public:
+//Time Complexity O(2^N) 
+//Space Complexity O(N)
+    int fib(int n) {
+       if(n == 0 || n == 1){
+        return n;
+       }
+       return fib(n-1) + fib(n-2);
+    }
+};
