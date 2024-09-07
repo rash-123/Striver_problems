@@ -1,0 +1,18 @@
+https://takeuforward.org/plus/data-structures-and-algorithm/binary-search/fundamentals/lower-bound-/editorial
+
+class Solution{
+public:
+//Time Complexity = O(N)
+//Space Complexity = O(1)
+    int lowerBound(vector<int> &nums, int x){
+        int n = nums.size();
+        for(int i = 0; i < n ; i++){
+            if(nums[i] >= x){
+                return i;
+            }
+        }
+        /* If lower bound of 
+           target is not found */
+        return n;
+    }
+};
