@@ -1,0 +1,23 @@
+// https://takeuforward.org/plus/data-structures-and-algorithm/beginner-problems/basic-hashing/highest-occurring-element-in-an-array
+
+class Solution {
+public:
+//Time Complexity - O(N)
+//Space Complexity - O(N)
+    int mostFrequentElement(vector<int>& nums) {
+        int n = nums.size();
+        int count = 0;
+        int ans = 0;
+        map<int,int> freq;
+        for(int i = 0; i < n; i++){
+            freq[nums[i]]++;
+        }
+        for(auto x: freq){
+            if(x.second > count){
+                count = x.second;
+                ans = x.first;
+            }
+        }
+        return ans;
+    }
+};
