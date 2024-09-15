@@ -1,0 +1,21 @@
+// https://takeuforward.org/plus/data-structures-and-algorithm/sorting/algorithms/insertion-sorting
+
+class Solution {
+public:
+//Time Complexity - O(N2)
+//Space Complexity - O(1)
+    vector<int> insertionSort(vector<int>& nums) {
+        int n = nums.size();
+        int j = 0;
+        for(int i = 1; i < n; i++){
+            int currIndex = nums[i];
+            j = i-1;
+            while(j >= 0 && nums[j] > currIndex){
+                nums[j+1] = nums[j];
+                j--;
+            }
+            nums[j+1] = currIndex;
+        }
+        return nums;
+    }
+};
