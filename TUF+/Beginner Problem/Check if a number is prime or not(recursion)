@@ -1,0 +1,26 @@
+https://takeuforward.org/plus/data-structures-and-algorithm/beginner-problems/basic-recursion/check-if-a-number-is-prime-or-not
+
+class Solution{	
+	//TC - O(N)
+	//SC - O(N)
+	public:
+		bool checkPrime(int num){
+			if(num <= 1){
+				return true;
+			}
+
+			return prime(num, 2);
+		}
+
+		bool prime(int num, int i){
+			if(i >= num){
+				return true;
+			}
+			if(num % i == 0){
+				return false;
+			}
+
+			return prime(num, i+1);
+
+		}
+};
