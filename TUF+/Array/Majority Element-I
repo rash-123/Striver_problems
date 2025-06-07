@@ -1,0 +1,37 @@
+class Solution {
+public:
+//TC - O(N)
+//SC - O(1)
+    int majorityElement(vector<int>& nums) {
+        int n = nums.size();
+
+        int ct = 0;
+        int el;
+
+        //find the element which present in more no of times in array
+        for(int i = 0; i < n; i++){
+            if(ct == 0){
+                ct = 1;
+                el = nums[i];
+            }
+            else if (el == nums[i]){
+                ct++;
+            }
+            else{
+                ct--;
+            }
+        }
+
+        int ct1 = 0;
+        for(int i = 0; i < n; i++){
+            if(nums[i] == el){
+                ct1++;
+            }
+        }
+
+        if(ct1 > (n/2)){
+            return el;
+        }
+        return -1;
+    }
+};
